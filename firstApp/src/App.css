@@ -1,0 +1,19 @@
+*{
+    margin: 10;
+    box-sizing:border-box;
+}
+
+.div{
+    background-color:bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+    border: 2px solid rgb(238, 132, 132);
+}
+
+.img{
+    border: 1px solid rgb(17, 14, 223);
+}
