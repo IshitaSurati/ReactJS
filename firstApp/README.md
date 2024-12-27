@@ -1,7 +1,7 @@
 # My First React App 🎉
 
 ## Preview 🌟
-- URL: [https://react-js-gamma-azure.vercel.app/]
+- URL: [Link](https://react-js-gamma-azure.vercel.app/)
 
 This project is a beginner-friendly React application that demonstrates the basic concepts of React, including JSX, inline styling, CSS integration, and rendering static assets such as images. The app displays a styled greeting message, some descriptive text, and an image.
 
