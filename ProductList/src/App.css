@@ -1,0 +1,139 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Align content to top */
+    align-items: flex-start;  /* Align content to the top-left */
+    height: 100vh; /* Ensure full viewport height for the body */
+    width: 100%;
+    flex-direction: column;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  /* Header */
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 30px; /* Increased margin from top */
+    font-size: 2rem;
+  }
+  
+  /* Products List */
+  .product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 products per row */
+    gap: 20px; /* Space between cards */
+    padding: 20px;
+    width: 100%; /* Make the product list width responsive */
+    margin: 0 auto; /* Center the list */
+    box-sizing: border-box; /* Includes padding in element width */
+    overflow: hidden; /* Ensures no overflow */
+  }
+  
+  /* Card Styles */
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto; /* Allow height to adjust based on content */
+    max-height: 1000px; /* Maximum height for uniformity */
+    min-height: 380px; /* Minimum height for uniformity */
+  }
+  
+  /* Card Image */
+  .card img {
+    width: 100%;
+    height: 200px; /* Fixed height for the image */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  /* Card Title */
+  .card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  /* Card Description */
+  .card p {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 5px 0;
+    line-height: 1.4;
+  }
+  
+  /* Category Style */
+  .card p.category {
+    font-style: italic;
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  /* Hover Effect */
+  .card:hover {
+    transform: translateY(-10px); /* Slight lifting effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Larger shadow */
+  }
+  
+  /* Rating Style */
+  .card p.rating {
+    font-size: 0.875rem;
+    color: #ffb400; /* Gold color for ratings */
+    font-weight: bold;
+    margin-top: auto; /* Pushes the rating to the bottom */
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .product-list {
+      grid-template-columns: repeat(2, 1fr); /* 2 products per row on small screens */
+      padding: 0 10px;
+    }
+  
+    .card {
+      max-height: 420px; /* Adjust card height for small screens */
+      min-height: 350px; /* Ensure consistency in card height */
+    }
+  
+    .card h3 {
+      font-size: 1.1rem;
+    }
+  
+    .card p {
+      font-size: 0.8rem;
+    }
+  
+    h1 {
+      font-size: 1.6rem; /* Smaller header text on mobile */
+      margin-top: 15px;
+    }
+  }
+  
+  button {
+    background-color: rgb(59, 156, 7);
+    color: rgb(254, 254, 251);
+    height: 40px;
+    border: none;
+    font-size:large;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f4f4f9;
+    color: #333;
+    border: 1px solid black;
+  }
+  

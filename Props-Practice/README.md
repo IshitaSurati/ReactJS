@@ -1,6 +1,6 @@
 # React Props Example: Using Objects, Arrays
  
-## Preview : [Link](https://react-js-vn2o.vercel.app/)
+## Preview : [Link](https://react-js-9ixk.vercel.app/)
 
 ## What are Props?
 - Props are like arguments you give to a function.
