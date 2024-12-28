@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react"; // Import useState here
 
 const UserProfileCard = ({
   name,
@@ -8,13 +8,18 @@ const UserProfileCard = ({
   profilePicture,
   followText,
 }) => {
+  const [isFollowed, setIsFollowed] = useState(false);
+  const toggleFollow = () => setIsFollowed((prev) => !prev);
+
   return (
     <div className="user-profile-card">
       <img src={profilePicture} alt={`${name}'s profile`} />
       <h2>{`${name}, ${age}`}</h2>
       <p>{location}</p>
       <p>{bio}</p>
-      <button>{followText}</button>
+      <button onClick={toggleFollow}>
+        {isFollowed ? "Unfollow" : "Follow"}
+      </button>
     </div>
   );
 };

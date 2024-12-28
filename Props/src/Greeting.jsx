@@ -1,11 +1,8 @@
 import React from "react";
 
 const Greeting = ({ name }) => {
-  return (
-    <div className="greeting">
-      <h1>{name ? `Hello, ${name}!` : "Welcome to our platform!"}</h1>
-    </div>
-  );
+  const greetingMessage = name ? `Hello, ${name}!` : 'Welcome, Guest!';
+  return <h1>{greetingMessage}</h1>;
 };
 
 export default Greeting;
