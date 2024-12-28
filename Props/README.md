@@ -1,24 +1,29 @@
-# React Props Example: Using Objects, Arrays
- 
-## Preview : [Link](https://react-js-vn2o.vercel.app/)
+# User Profile Card Component
 
-## What are Props?
-- Props are like arguments you give to a function.
-- In React, you use props to send data from a Parent Component to a Child Component.
+- Props:  [Link]()
 
-This is a simple React project that demonstrates how to pass and use **props** in React. The project showcases how to pass **primitive values**, **objects**, and **arrays** as props from a **Parent Component** to a **Child Component**.
+This project provides a reusable `UserProfileCard` component built with React, designed to display user information such as name, age, location, bio, and profile.
+
+---
 
 ## Features
-- **Passing Primitive Props** (String, Number)
-- **Passing Object Props**
-- **Passing Array Props**
-- **Destructuring Props in Child Components**
-- **Conditional Rendering for Optional Props**
 
-## Project Structure
-The project consists of the following components:
+- **Dynamic User Information**: Displays key user details like name, age, bio, and more.
+- **Profile Picture**: Includes a user profile image.
 
-1. **App.js**: The main entry point of the application. It renders the `ParentComponent`.
-2. **ParentComponent.js**: A component that passes props (primitive values, objects, and arrays) to the `ChildComponent`.
-3. **ChildComponent.js**: A component that receives the props from the parent and displays the data.
+---
+## Props
+
+| Prop Name       | Type     | Description                                   |
+|------------------|----------|-----------------------------------------------|
+| `profilePicture` | `string` | URL for the user's profile picture.           |
+| `name`           | `string` | User's name.                                  |
+| `age`            | `number` | User's age.                                   |
+| `location`       | `string` | User's location.                              |
+| `bio`            | `string` | Short bio about the user.                     |
+
+---
+
+
+
 

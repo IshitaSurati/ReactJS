@@ -1,0 +1,72 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styling */
+.header {
+  position: fixed; 
+  top: 0;
+  width: 100%;
+  background-color: #0047ab; 
+  color: white; 
+  padding: 15px 20px; 
+  text-align: center;
+  font-size: 1.8rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  z-index: 1000; 
+}
+
+/* Middle Section Styling */
+.mid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px 50px; 
+}
+
+.mid h1 {
+  font-size: 2.5rem;
+  color: #222; 
+  margin-bottom: 15px;
+}
+
+.mid h4 {
+  font-size: 1.2rem;
+  color: #555; 
+  margin-bottom: 10px;
+}
+
+.mid p {
+  font-size: 1rem;
+  color: #666; 
+  line-height: 1.6; 
+  max-width: 600px; 
+}
+
+/* Footer Styling */
+.footer {
+  position: fixed; 
+  bottom: 0;
+  width: 100%;
+  background-color: #0047ab; 
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+}

@@ -1,0 +1,99 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  h1, h2, p {
+    margin: 0;
+  }
+  
+  /* App Component */
+  div {
+    padding: 20px;
+  }
+  
+  /* Greeting Component */
+  .greeting {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .greeting h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* UserProfileCard Component */
+  .user-profile-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-profile-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .user-profile-card h2 {
+    font-size: 20px;
+    color: #444;
+    margin: 10px 0;
+  }
+  
+  .user-profile-card p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .user-profile-card button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .user-profile-card button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .user-profile-card {
+      padding: 10px;
+    }
+  
+    .user-profile-card h2 {
+      font-size: 18px;
+    }
+  
+    .user-profile-card p {
+      font-size: 14px;
+    }
+  
+    .user-profile-card button {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  
