@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Overall Container */
+  .heart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #fde4e8;
+    font-family: "Arial", sans-serif;
+    margin: 0;
+  }
+  
+  /* Heart Shape */
+  .heart {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: #ff6b81;
+    transform: rotate(-45deg);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .heart.pumping {
+    animation: pump 1s infinite alternate;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #ff6b81;
+    border-radius: 50%;
+  }
+  
+  .heart::before {
+    top: -75px;
+    left: 0;
+  }
+  
+  .heart::after {
+    left: 75px;
+    top: 0;
+  }
+  
+  /* Counter Text Inside Heart */
+  .counter-text {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    transform: rotate(45deg); /* Rotate text back to upright */
+    position: absolute;
+    top: 42%;
+    left: 60%;
+    transform: translate(-50%, -50%) rotate(45deg); /* Center and rotate text */
+    text-align: center;
+    z-index: 1; /* Ensure text is visible above heart shape */
+  }
+  
+  /* Toggle Button - Updated Style */
+  .toggle-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: #ff6b81;
+    color: white;
+    border: 2px solid #ff6b81;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px; /* More space between heart and button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .toggle-button:hover {
+    background-color: white;
+    color: #ff6b81;
+    transform: scale(1.1);
+    border-color: #ff6b81;
+  }
+  
+  .toggle-button:active {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Heart Pumping Animation */
+  @keyframes pump {
+    0% {
+      transform: rotate(-45deg) scale(1);
+    }
+    50% {
+      transform: rotate(-45deg) scale(1.1);
+    }
+    100% {
+      transform: rotate(-45deg) scale(1);
+    }
+  }
+  
