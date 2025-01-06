@@ -1,10 +1,22 @@
-import React from 'react'
+import React from "react";
+import ProductForm from "./ProductForm";
+import Timer2 from "./Timer2";
+import Card from "./Card";
 
 function List() {
   return (
-    <div>List</div>
-    
-  )
+    <>
+    <div>
+    <ProductForm />
+    </div>
+      <div className="Counter">
+        <Timer2/>
+      </div>
+      <div>
+        <Card/>
+      </div>
+    </>
+  );
 }
 
-export default List
+export default List;
