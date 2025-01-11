@@ -33,7 +33,7 @@ const Task = () => {
           isCompleted: false,
         });
 
-        toast.success("🦄  easy!", {
+        toast.success("✔ submit!", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
