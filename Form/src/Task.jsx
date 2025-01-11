@@ -1,66 +1,111 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import TodoItem from "./TodoItem";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 
-function Task() {
-    let [data, setData] = useState({
-        task: "",
-        date: "",
-        isComplete: false,
+const Task = () => {
+  let [data, setData] = useState({
+    task: "",
+    date: "",
+    isCompleted: false,
+  });
+
+  let [id, setId] = useState(-1);
+  let [list, setList] = useState([]);
+
+  const handleInput = (e) => {
+    let { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value,
     });
-    let [list, setList] = useState([]);
+  };
 
-    const handleInput = (e) => {
-        let { name, value } = e.target;
-        setData({ ...data, [name]: value });
-    };
+  const onSubmit = (e) => {
+    e.preventDefault();
 
-    const onSubmit = (e) => {
-        e.preventDefault();
-        if (data.task && data.date) { // Validate required fields
-            setList([...list, { ...data, id: Date.now() }]);
-            setData({ task: "", date: "", isComplete: false }); // Clear the form
-        } else {
-            alert("Please fill in all fields");
-        }
-    };
+    if (data.task.length > 0 && data.date.length > 0) {
+      if (id == -1) {
+        setList([...list, { ...data, id: Date.now() }]);
 
-    const toggleComplete = (id) => {
-        setList(
-            list.map((item) =>
-                item.id === id ? { ...item, isComplete: !item.isComplete } : item
-            )
+        setData({
+          task: "",
+          date: "",
+          isCompleted: false,
+        });
+
+        toast.success("🦄  easy!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          transition: Bounce,
+        });
+      } else {
+        let temp = list.map((ele) =>
+          ele.id == id ? { ...data, id: id } : ele
         );
-    };
+        setList(temp);
+      }
+      setId(-1)
+    }
+  }; 
 
-    return (
-        <>
-            <form onSubmit={onSubmit}>
-                <input
-                    type="text"
-                    name="task"
-                    value={data.task}
-                    placeholder="Enter task"
-                    onChange={handleInput}
-                />
-                <input
-                    type="date"
-                    name="date"
-                    value={data.date}
-                    onChange={handleInput}
-                />
-                <button type="submit">Add Task</button>
-            </form>
-
-            {list.map(({ task, date, isComplete, id }) => (
-                <div key={id}>
-                    <h3>{task}</h3>
-                    <p>Due date: {date}</p>
-                    <button onClick={() => toggleComplete(id)}>
-                        {isComplete ? "Complete" : "Pending"}
-                    </button>
-                </div>
-            ))}
-        </>
+  const handleStatusChange = (id) => {
+    let temp = list.map((ele) =>
+      ele.id == id ? { ...ele, isCompleted: !ele.isCompleted } : ele
     );
-}
+    setList(temp);
+  };
+
+  const handleDelete = (id) => {
+    console.log("delete", id);
+    let temp = list.filter((ele) => ele.id != id);
+    setList(temp);
+  };
+  const onUpdate = (prevData) => {
+    console.log(prevData);
+    setData({
+      task: prevData.task,
+      date: prevData.date,
+      isCompleted: prevData.isCompleted,
+    });
+    setId(prevData.id);
+  };
+  return (
+    <div>
+      <form onSubmit={onSubmit}>
+        <input
+          type="text"
+          name="task"
+          onChange={handleInput}
+          value={data.task}
+        />
+        <input
+          type="date"
+          name="date"
+          onChange={handleInput}
+          value={data.date}
+        />
+        <input type="submit" />
+        <ToastContainer />
+      </form>
+      <hr />
+      {list.length > 0 &&
+        list.map((ele) => (
+          <TodoItem
+            {...ele}
+            key={ele.id}
+            onDelete={handleDelete}
+            onStatusUpdate={handleStatusChange}
+            onUpdate={onUpdate}
+          />
+        ))}
+    </div>
+  );
+};
 
 export default Task;
