@@ -42,13 +42,9 @@ const getUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-    const { email, password } = req.body;
-
-    if (!email || !password) {
-        return res.status(400).send({ message: "Email and password are required." });
-    }
-
     try {
+        const { email, password } = req.body;
+
         // Find user by email
         const user = await User.findOne({ email });
         if (!user) {
@@ -61,13 +57,17 @@ const loginUser = async (req, res) => {
             return res.status(401).send({ message: "Invalid credentials." });
         }
 
-        const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        // Generate JWT Token
+        const token = jwt.sign({ id: user._id, email: user.email }, process.env.JWT_SECRET, {
+            expiresIn: "1h" // Token validity
+        });
 
-        res.status(200).send({ message: "Login successful.", token, user });
+        res.status(200).send({ message: "Login successful.", token });
     } catch (error) {
         res.status(500).send({ message: "Error logging in.", error: error.message });
     }
 };
+
 
 const deleteUser = async (req, res) => {
     const { id } = req.params;
