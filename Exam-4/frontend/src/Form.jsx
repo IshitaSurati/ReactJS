@@ -24,6 +24,7 @@ function Form() {
     handleSubmit,
     formState: { errors },
     watch,
+    reset, 
   } = useForm({
     resolver: zodResolver(validationSchema),
     mode: "onChange",
@@ -46,6 +47,7 @@ function Form() {
       });
       console.log("User created successfully:", response.data);
       setSubmittedData(response.data); // Store the submitted data for display
+      reset(); // Clear the form after successful submission
     } catch (error) {
       console.error("Error creating user", error);
     }
@@ -101,7 +103,7 @@ function Form() {
           <label>Price</label>
           <input
             type="number"
-            {...register("price" , { valueAsNumber: true })}
+            {...register("price", { valueAsNumber: true })}
             style={{ border: getBorder("price") }}
           />
           {errors.price && <p className="error-text">{errors.price.message}</p>}
