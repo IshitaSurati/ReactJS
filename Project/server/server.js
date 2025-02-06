@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
 
 
 
-const PORT = process.env.PORT || 8090
-app.listen(8090, () => {
+const PORT = process.env.PORT || 8000
+app.listen(PORT, () => {
     console.log(`Server Runing on port ${PORT}`);
 })
 connectDB();
