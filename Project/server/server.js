@@ -8,8 +8,7 @@ app.use(express.json())
 
 
 app.get("/", (req, res) => {
-    console.log("Welcome to bakend of project");
-
+    res.send("Welcome to backend of project")
 })
 
 
