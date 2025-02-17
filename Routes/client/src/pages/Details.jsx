@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const Details = () => {
@@ -8,7 +8,7 @@ const Details = () => {
 
   const getProduct = async () => {
     try {
-      let res = await axios.get(`https://fakestoreapi.com/products/${id}`);
+      let res = await axios.get(`http://localhost:5000/api/products/${id}`);
       setProduct(res.data);
     } catch (error) {
       console.error("Error fetching product:", error);
@@ -27,6 +27,7 @@ const Details = () => {
       <img src={product.image} alt={product.title} className="details-image" />
       <p className="details-description">{product.description}</p>
       <h3 className="details-price">${product.price}</h3>
+      <button className="buy-btn">Buy Now</button>
     </div>
   );
 };

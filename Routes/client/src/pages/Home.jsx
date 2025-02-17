@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
 
   const getProducts = async () => {
     try {
-      let res = await axios.get("https://fakestoreapi.com/products");
+      let res = await axios.get("http://localhost:5000/api/products"); 
       setProducts(res.data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -23,16 +23,16 @@ const Home = () => {
       <h1 className="home-title">Products</h1>
       <div className="product-list">
         {products.length > 0 ? (
-          products.map(({ id, title, image }) => (
-            <div key={id} className="product-card">
+          products.map(({ _id, title, image }) => (
+            <div key={_id} className="product-card">
               <img src={image} alt={title} className="product-image" />
-              <Link to={`/product/${id}`} className="product-title">
+              <Link to={`/product/${_id}`} className="product-title">
                 {title}
               </Link>
             </div>
           ))
         ) : (
-          <h2 className="no-products">No products available</h2>
+          <h2>No products available</h2>
         )}
       </div>
     </div>

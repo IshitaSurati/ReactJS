@@ -1,0 +1,237 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f3e8ff; /* Light purple background */
+  color: #333;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  gap: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #6a11cb, #9c27b0);
+  justify-content: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Home Page */
+.home-container {
+  text-align: center;
+  padding: 40px;
+  background: #d1c4e9; /* Soft purple */
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.home-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #6a11cb;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  text-align: center;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #6a11cb;
+  text-decoration: none;
+}
+
+.product-title:hover {
+  text-decoration: underline;
+}
+
+/* Product Details Page */
+.details-container {
+  text-align: center;
+  padding: 40px;
+  background: #d1c4e9; /* Soft purple */
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.details-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #6a11cb;
+}
+
+.details-image {
+  width: 250px;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
+}
+
+.details-description {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.details-price {
+  font-size: 1.5rem;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Buttons */
+button,
+.auth-button,
+.add-product-container button {
+  padding: 12px;
+  background: linear-gradient(135deg, #6a11cb, #9c27b0);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+.auth-button:hover,
+.add-product-container button:hover {
+  background: linear-gradient(135deg, #9c27b0, #6a11cb);
+  transform: scale(1.05);
+}
+
+/* Buy Button */
+.buy-button {
+  padding: 12px;
+  background: #ff4081;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.buy-button:hover {
+  background: #e91e63;
+  transform: scale(1.05);
+}
+
+/* Authentication & Add Product Form Styling */
+.auth-container,
+.add-product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #6a11cb, #9c27b0);
+  min-height: 100vh;
+  border-radius: 10px;
+  margin: 20px auto;
+}
+
+.auth-container h2,
+.add-product-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.auth-form,
+.add-product-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 350px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.auth-input,
+.add-product-container input,
+.add-product-container textarea,
+.add-product-container select {
+  padding: 12px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.auth-input::placeholder,
+.add-product-container input::placeholder,
+.add-product-container textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.auth-container p,
+.add-product-container p {
+  color: white;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .auth-form,
+  .add-product-container form {
+      width: 100%;
+      max-width: 90%;
+  }
+}

@@ -11,3 +11,4 @@ router.post("/add-product", authMiddleware, async (req, res) => {
 });
 
 module.exports = router;
+
