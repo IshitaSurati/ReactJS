@@ -5,7 +5,7 @@ const QuizList = () => {
   const [quizzes, setQuizzes] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/quizzes')
+    axios.get('http://localhost:5000/api/quizzes/')
       .then(response => setQuizzes(response.data))
       .catch(error => console.log(error));
   }, []);

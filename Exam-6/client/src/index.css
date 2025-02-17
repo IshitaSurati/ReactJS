@@ -143,3 +143,74 @@ input[type="checkbox"] {
 .navbar a:hover {
   text-decoration: underline;
 }
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"], button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4CAF50; /* Green color */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 5px; /* Space between radio button and label */
+}
+
+.form-container p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  font-size: 14px;
+}
+
+input[type="radio"]:checked + label {
+  font-weight: bold; /* Make the label bold when the radio button is checked */
+}
+
+/* Optional: Style the form's input fields to make them visually appealing */
+input[type="text"], input[type="password"] {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Align the radio buttons and labels properly */
+.radio-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+

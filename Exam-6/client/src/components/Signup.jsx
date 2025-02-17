@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Signup = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isAdmin, setIsAdmin] = useState(false); 
+  const [role, setRole] = useState('user');  // Default to 'user'
   const [message, setMessage] = useState('');
   const navigate = useNavigate();  
 
@@ -13,7 +13,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:5000/api/auth/signup', { username, password, isAdmin });
+      await axios.post('http://localhost:5000/api/auth/signup', { username, password, role });
       navigate('/login'); 
     } catch (error) {
       setMessage('Error creating user');
@@ -38,16 +38,31 @@ const Signup = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <label>
-          Admin:
-          <input
-            type="checkbox"
-            checked={isAdmin}
-            onChange={(e) => setIsAdmin(e.target.checked)}
-          />
-        </label>
+        
+        <div className="radio-group">
+          <label>
+            <input
+              type="radio"
+              value="user"
+              checked={role === 'user'}
+              onChange={(e) => setRole(e.target.value)}
+            />
+            User
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="admin"
+              checked={role === 'admin'}
+              onChange={(e) => setRole(e.target.value)}
+            />
+            Admin
+          </label>
+        </div>
+
         <button type="submit">Sign Up</button>
       </form>
+      
       {message && <p className="error-message">{message}</p>}
       <p>Already have an account? <a href="/login">Login</a></p>
     </div>
