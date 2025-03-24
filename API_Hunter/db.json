@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "id": "8268",
+      "name": "ishita",
+      "description": "testing",
+      "price": "900",
+      "category": "kids",
+      "stock": "70"
+    },
+    {
+      "id": "6a97",
+      "name": "xyz",
+      "description": "xyz",
+      "price": "400",
+      "category": "nothing",
+      "stock": "9"
+    }
+  ]
+}
