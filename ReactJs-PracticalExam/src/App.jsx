@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPopularMovies } from "../redux/actions";
+import { Link } from "react-router-dom";
+import ".src/App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const MovieList = () => {
+  const dispatch = useDispatch();
+  const moviesState = useSelector((state) => state.movies || {});
+  const { movies, loading, error } = moviesState;
+
+  useEffect(() => {
+    dispatch(fetchPopularMovies());
+  }, [dispatch]);
+
+  if (loading) return <p className="loading">Loading...</p>;
+  if (error) return <p className="error">Error: {error}</p>;
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="movie-list-container">
+      <h2>Popular Movies</h2>
+      <div className="movie-grid">
+        {movies.map((movie) => (
+          <Link to={`/movie/${movie.id}`} key={movie.id} className="movie-item">
+            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+            <h3>{movie.title}</h3>
+          </Link>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default MovieList;
